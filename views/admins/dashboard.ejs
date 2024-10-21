@@ -1,0 +1,85 @@
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1>Admin Dashboard</h1>           
+        </header>
+
+        <section class="user-management">
+            <h2>Users List :</h2>
+            
+            <!-- Search bar -->
+                <form action="" method="post" class="search-bar">
+                    <input type="search" id="search" name="searchItem" placeholder="Search by username or email...">
+                    <button type="submit">Search</button>
+                </form>
+           
+            
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>Profile Picture</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- User list goes here -->
+                    <% if (users.length > 0) { %>
+                        <% for (let i = 0; i < users.length; i++) { %>
+                        <tr>
+                            <td>
+                                <img src="/userImages/<%= users[i].image %>" alt="<%= users[i].name %>'s image">
+                            </td>
+                            <td><%= users[i].name %></td>
+                            <td><%= users[i].email %></td>
+                            <td>
+                                <a href="/admin/edit-user/<%= users[i]._id %>" class="action-btn edit-btn">Edit</a>
+                                <a href="/admin/delete-user/<%= users[i]._id %>" class="action-btn delete-btn">Delete</a>
+                                <div class="ban-checkbox">
+                                    <input type="checkbox" id="ban<%= users[i]._id %>" name="ban<%= users[i]._id %>" onchange="toggleBan('<%= users[i]._id %>', this.checked)" <%= users[i].isBanned ? 'checked' : '' %> >
+                                    <label for="ban<%= users[i]._id %>">Ban</label>
+                                </div>                            
+                            </td>                            
+                        </tr>
+                        <% } %>
+                    <% } else { %>
+                        <!-- Display message if no users found -->
+                        <tr>
+                            <td colspan="6" class="no-users">User not found</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </section>
+        
+
+        <section class="add-user">
+            <a href="/admin/new-user" class="add-user-btn">Add New User</a>
+        </section>
+        <div class="homelink">
+            <p class="home-link">
+                <a href="/admin/home">Back to Home</a>
+            </p>
+        </div>
+    </div>
+    <script>
+        function toggleBan(userId, isBanned) {
+            fetch(`/admin/ban-user/${userId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ isBanned: isBanned })
+            })
+            .then(response => response.json())
+            .then(data => {
+                //alert(data.message);  // Show a message if needed
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+    
+</body>

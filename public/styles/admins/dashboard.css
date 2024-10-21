@@ -1,0 +1,356 @@
+/* Main Dashboard Body Styling */
+.dashboard-body {
+    background: url('/images/login/login-bg-pc.webp') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Cinzel', sans-serif;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    background: rgba(0, 0, 0, 0.85); /* Slightly darker background for better contrast */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.8s ease-in-out; /* Add fade-in animation */
+}
+
+/* Hover effect for the container */
+.dashboard-container:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* Header Styling */
+.dashboard-header {
+    text-align: center;
+}
+
+.dashboard-header h1 {
+    color: #00ff00;
+    font-size: 32px;
+    animation: slideInDown 0.6s ease, glow 1s infinite alternate; /* Add slide-down and glow animation */
+}
+
+/* Subheading Styling */
+.dashboard-header h2 {
+    color: #fff;
+    font-size: 20px; /* Adjust size as needed */
+    margin-top: 5px; /* Space between title and subheading */
+    opacity: 0.8; /* Slightly faded look */
+}
+
+/* User Management Section */
+.user-management h2 {
+    color: #00ff00;
+    margin-bottom: 10px;
+    text-align: left;
+    animation: slideInLeft 0.6s ease; /* Slide in from left */
+}
+
+/* Table Styling */
+.user-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.user-table th {
+    background-color: #00ff00; /* Green header for tables */
+    font-family: 'Cinzel', sans-serif;
+}
+
+.user-table td {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Buttons Styling */
+.action-btn {
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Add transition for background and transform */
+}
+
+.action-btn:hover {
+    transform: translateY(-2px); /* Lift up slightly on hover */
+}
+
+.edit-btn {
+    background-color: #3498db; /* Blue for edit buttons */
+}
+
+.delete-btn {
+    background-color: #e74c3c; /* Red for delete buttons */
+}
+
+.add-user {
+    text-align: center;
+}
+
+.add-user-btn {
+    padding: 10px 20px;
+    background-color: #00ff00; /* Green for add user button */
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s ease-in-out; /* Add background color and transform transitions */
+    animation: bounceIn 1s ease; /* Bounce in animation */
+}
+
+.edit-btn:hover {
+    background-color: #2166e4; /* Change color on hover */
+    transform: translateY(-3px); 
+} 
+
+.delete-btn:hover {
+    background-color: #d42929; /* Change color on hover */
+    transform: translateY(-3px); 
+}
+
+/* Hover effect for add user button */
+.add-user-btn:hover {
+    background-color: #34ba34; /* Change color on hover */
+    transform: translateY(-3px); /* Lift button slightly on hover */
+}
+
+/* Ban Checkbox Styling */
+.ban-checkbox {
+    position: relative;
+    display: inline-block;
+}
+
+.ban-checkbox input {
+    display: none;
+}
+
+.ban-checkbox label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px;
+    color: #f39c12; /* Orange for checkbox label */
+    font-weight: bold;
+}
+
+.ban-checkbox label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -4px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #f39c12; /* Border color for checkbox */
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+.ban-checkbox input:checked + label::before {
+    background-color: #f39c12; /* Background when checked */
+}
+
+.ban-checkbox label::after {
+    content: '✓';
+    position: absolute;
+    left: 4px;
+    top: -5px;
+    font-size: 18px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.ban-checkbox input:checked + label::after {
+    opacity: 1;
+}
+
+td img {
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 15px;
+    }
+    .user-table th, .user-table td {
+        padding: 8px;
+    }
+    .profile-pic {
+        width: 35px;
+        height: 35px;
+    }
+    .action-btn {
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        width: 100%; /* Make buttons take full width */
+    }
+    .ban-checkbox {
+        display: block;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-header h1, .user-management h2 {
+        font-size: 18px;
+    }
+
+    .user-table th, .user-table td {
+        font-size: 14px;
+    }
+
+    .add-user-btn {
+        font-size: 16px;
+    }
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Glow Effect Keyframes */
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; }
+    100% { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
+}
+ 
+.home-link {
+    color: rgb(255, 255, 255);
+    margin-top: 1.3em;
+    font-family: sans-serif;
+}
+
+.home-link a {
+    text-decoration: underline;
+    color: white;
+}
+
+.homelink {
+    text-align: center;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 10px; /* Add space between input and button */
+    align-items: center;
+}
+
+.search-bar input {
+    width: 100%; /* Let input take full width */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #333;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-bar input:focus {
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.7);
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #00ff00;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+    font-family: sans-serif;
+    font-size: 16px;
+    width: auto; /* Let button take auto width */
+}
+
+.search-bar button:hover {
+    background-color: #34ba34;
+}
+
+/* Responsive for small devices */
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar input,
+    .search-bar button {
+        box-sizing: border-box;
+        width: 100%; /* Full width for both on smaller screens */
+    }
+}

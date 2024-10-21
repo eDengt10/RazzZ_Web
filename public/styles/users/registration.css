@@ -1,0 +1,142 @@
+.reg-body {
+    background: url('/images/login/login-bg-pc.webp') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel', sans-serif;
+}
+
+.login-container {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: slideIn 2s;
+}
+
+.game-header h1 {
+    color: #00ff00;
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+    animation: glow 1s infinite alternate;
+}
+
+.game-header p {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    text-transform: uppercase;
+}
+
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="number"],
+.login-form input[type="file"],
+.login-form input[type="password"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 10px;
+    background-color: #22222298;
+    border: 1px solid #555;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-family: sans-serif;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* To remove the number input selector (two arrow marks up and down) */
+.login-form input[type="number"]::-webkit-inner-spin-button,
+.login-form input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="email"]:focus,
+.login-form input[type="number"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: #00ff00;
+    border-width: 1.3px;
+    outline: none;
+}
+
+.login-form label{ 
+    color: white;
+}
+
+.login-form input[type="submit"] {
+    background-color: #00ff00;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    color: #000;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #34ba34;
+}
+
+.login-form input[type="submit"]:active {
+    background-color: #329a32;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #0000006c; /* Light blue background */
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 0;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1em;
+}
+
+.custom-file-upload:hover {
+    background-color: #000000af; /* Darker blue on hover */
+}
+
+.custom-file-upload:active {
+    background-color: #000000d9;
+}
+
+.login-form input[type="file"] {
+    display: none; 
+}
+
+.login-link {
+    color: rgb(255, 255, 255);
+    margin-top: .5em;
+    font-family: sans-serif;
+}
+
+.login-link a {
+    text-decoration: underline;
+    color: white;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; }
+    100% { text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+  

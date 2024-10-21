@@ -1,0 +1,27 @@
+<body class="login-body">
+    <div class="login-container">
+        <div class="game-header">
+            <h1>RazzZ Officials</h1>
+            <p>Gaming Community</p>
+            <% if (message) %>
+            <div class="alert alert-info" style="color: rgb(255, 255, 255);">
+                <%= message %>
+            </div>
+            <script>
+                if (window.history.replaceState) {
+                    const url = new URL(window.location);
+                    url.searchParams.delete('message'); 
+                    window.history.replaceState(null, '', url);
+                }
+            </script>
+        </div>
+        <form action="<%= action %>" method="post" class="login-form">
+            <input type="email" name="email" placeholder="Email address" required/>
+            <input type="password" name="password" placeholder="Password" required/>
+            <input type="submit" value="Login">
+        </form>
+        <p class="login-link">
+            Not yet registered? <a href="/register">Register here</a>
+        </p>
+    </div>
+</body>

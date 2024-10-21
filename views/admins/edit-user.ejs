@@ -1,0 +1,44 @@
+<body class="reg-body">
+    <div class="login-container">
+        <div class="game-header">
+            <h1>RazzZ Officials</h1>
+            <p>Edit User</p>
+        </div>
+
+        <% if (message) { %>
+        <div class="alert alert-info" style="color: rgb(255, 255, 255);">
+            <%= message %>
+        </div>
+        <% } %>
+
+        <!-- Script to remove the message from URL after showing it -->
+        <script>
+            if (window.history.replaceState) {
+                const url = new URL(window.location);
+                url.searchParams.delete('message');
+                window.history.replaceState(null, '', url);
+            }
+        </script>
+
+        <!-- Edit User Form -->
+        <form action="/admin/edit-user/<%= user._id %>" method="post" enctype="multipart/form-data" class="login-form">
+            <!-- Pre-fill current user's data in the input fields -->
+            <input type="text" name="name" value="<%= user.name %>" placeholder="Username" required/>
+            <input type="email" name="email" value="<%= user.email %>" placeholder="Email address" required/>
+            <input type="number" name="phone" value="<%= user.mobile %>" placeholder="Phone number" required/>
+            <input type="password" name="password" placeholder="New Password"/> <!-- Password can be left empty if not changing -->
+
+            <label for="image">Gaming Profile Picture</label>
+            <label class="custom-file-upload">
+                <input type="file" name="image"/> <!-- Optional image upload for edit -->
+                Choose
+            </label>
+
+            <input type="submit" value="Update User">
+        </form>
+
+        <p class="login-link">
+            <a href="/admin/dashboard">Back to Dashboard</a>
+        </p>
+    </div>
+</body>

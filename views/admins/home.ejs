@@ -1,0 +1,30 @@
+<body class="profile-body">
+    <div class="profile-container">
+        <header class="profile-header">
+            <h1>Admin Profile</h1>
+        </header>
+        <div class="admin-logo-div">
+            <img src="/userImages/<%= admin.image %>" alt="Admin Logo" class="admin-logo">
+        </div>
+
+        <section class="admin-info">
+            <div class="info-item">
+                <label>Name :  <span><%= admin.name %></span></label>
+                
+            </div>
+            <div class="info-item">
+                <label>Email :  <span><%= admin.email %></span></label>
+                
+            </div>
+            <div class="info-item">
+                <label>Phone :  <span><%= admin.mobile %></span></label>
+                
+            </div>
+        </section>
+
+        <section class="profile-actions">
+            <a href="/admin/dashboard" class="dashboard-btn">Dashboard</a>
+            <a href="/admin/logout" class="logout-btn">Logout</a>
+        </section>
+    </div>
+</body>

@@ -1,0 +1,145 @@
+/* Profile Body Styling */
+.profile-body {
+    background: url('/images/login/login-bg-pc.webp') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Cinzel', sans-serif;
+}
+
+/* Profile Container */
+.profile-container {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+/* Profile Header with Glow */
+.profile-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-header h1 {
+    color: #00ff00;
+    font-size: 24px;
+    animation: glow 1.5s infinite alternate; /* Apply glow animation */
+}
+
+/* Admin Logo */
+.admin-logo-div {
+    text-align: center;
+}
+
+.admin-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Admin Info */
+.admin-info .info-item {
+    margin-bottom: 10px;
+}
+
+.admin-info .info-item p {
+    margin: 2px;
+}
+
+.admin-info label {
+    font-size: 16px;
+    color: #00ff00;
+}
+
+.admin-info span {
+    padding-left: 2px;
+    font-size: 15px;
+    color: #fff;
+    font-family: sans-serif; /* Simplified font */
+}
+
+/* Profile Actions */
+.profile-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Buttons */
+.dashboard-btn, .logout-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.dashboard-btn {
+    background-color: #3498db;
+}
+
+.logout-btn {
+    background-color: #ff4c4c;
+}
+
+/* Button Hover Effects */
+.dashboard-btn:hover {
+    background-color: #0d75ba;
+}
+
+.logout-btn:hover {
+    background-color: #f41111;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 15px;
+    }
+    .admin-logo {
+        width: 80px;
+        height: 80px;
+    }
+    .profile-header h1 {
+        font-size: 20px;
+    }
+    .admin-info p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-container {
+        padding: 10px;
+    }
+    .profile-header h1 {
+        font-size: 18px;
+    }
+    .admin-info p {
+        font-size: 14px;
+    }
+    .dashboard-btn, .logout-btn {
+        font-size: 14px;
+    }
+}
+
+/* Keyframes for Glow Effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    }
+    100% {
+        text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+    }
+}

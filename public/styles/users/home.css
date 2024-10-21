@@ -1,0 +1,374 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-body {
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo span {
+    color: #00ff00;
+}
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.nav-links a:hover {
+    color: #00ff00; /* Changed color */
+}
+
+/* User Actions (Discord and Profile) */
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+
+.discord-btn {
+    margin-left: 20px;
+    padding: 7px 14px;
+    background-color: #00ff00; /* Changed color */
+    color: #121212;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.discord-btn:hover {
+    /* background-color: #00ff00;  */
+    transform: scale(1.05); /* Scaling effect */
+}
+
+.discord-btn:active {
+    background-color: #1aac1a; /* Darker when clicked */
+}
+
+/* User Profile Image */
+.profile-link {
+    display: inline-block;
+    margin-left: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.profile-link:hover .profile-img {
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../../images/others/ac1.webp') center/cover no-repeat;
+    position: relative;
+    text-align: center;
+}
+
+/* Adding a dark overlay */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay with opacity */
+    z-index: 1; /* Place the overlay behind the text content */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Place the content above the dark overlay */
+    background: rgba(0, 0, 0, 0.6); /* Also add some transparency to the content background */
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    color: #fff;
+}
+
+.hero span {
+    color: #00ff00; /* Changed color */
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #00ff00; /* Changed color */
+    color: #121212;
+    font-weight: 700;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.cta-btn:hover {
+    /* background-color: #1ebb1e; Darker shade for hover */
+    transform: scale(1.05); /* Scaling effect */
+}
+
+.cta-btn:active {
+    background-color: #248b24; /* Darker when clicked */
+}
+
+/* Games Section */
+.games-section {
+    padding: 70px 30px;
+    text-align: center;
+    background-color: #1a1a1a;
+}
+
+.games-section h2 {
+    font-size: 36px;
+    color: #00ff00; /* Changed color */
+    margin-bottom: 40px;
+}
+
+.games-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.game-card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.game-card:hover {
+    transform: scale(1.05); /* Scaling effect */
+}
+
+.game-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.game-card h3 {
+    color: #fff;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+/* Community Section */
+.community-section {
+    padding: 70px 30px;
+    background-color: #121212;
+    text-align: center;
+}
+
+.community-section h2 {
+    font-size: 36px;
+    color: #00ff00; /* Changed color */
+    margin-bottom: 30px;
+}
+
+.community-section p {
+    margin-bottom: 30px;
+}
+
+/* News Section */
+.news-section {
+    padding: 70px 30px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.news-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.news-card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.news-card:hover {
+    transform: scale(1.05); /* Scaling effect */
+}
+
+.news-card h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.news-card p {
+    color: #bbb;
+}
+
+.read-more {
+    color: #00ff00; /* Changed color */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    padding: 30px;
+    background-color: #000;
+    text-align: center;
+    color: #888;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* Hide Navbar Links on Small Screens */
+    .nav-links {
+        display: none;
+    }
+
+    .user-actions {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .games-container, .news-container {
+        justify-content: space-around;
+    }
+
+    .game-card, .news-card {
+        width: calc(50% - 20px);
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .cta-btn {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Smaller Device Styles */
+    .logo {
+        font-size: 20px;
+    }
+
+    .user-actions {
+        justify-content: flex-end;
+    }
+
+    .discord-btn {
+        margin-left: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .profile-link {
+        margin-left: 10px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero-content {
+        padding: 30px;
+        max-width: 395px;
+    }
+
+    .cta-btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .games-section h2,
+    .community-section h2,
+    .news-section h2 {
+        font-size: 30px;
+    }
+
+    .game-card h3,
+    .news-card h3 {
+        font-size: 18px;
+    }
+
+    .games-container, .news-container {
+        justify-content: space-between;
+    }
+
+    .game-card, .news-card {
+        width: calc(100% - 20px);
+        margin-bottom: 20px;
+    }
+
+    .games-section,
+    .community-section,
+    .news-section {
+        padding: 50px 20px;
+    }
+
+    .footer {
+        padding: 20px;
+    }
+}

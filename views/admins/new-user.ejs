@@ -1,0 +1,38 @@
+<body class="reg-body">
+    <div class="login-container">
+        <div class="game-header">
+            <h1>RazzZ Officials</h1>
+            <p>Add new user</p>
+        </div>
+
+        <% if (message) %>
+        <div class="alert alert-info" style="color: rgb(255, 255, 255);">
+            <%= message %>
+        </div>
+        <script>
+            if (window.history.replaceState) {
+                const url = new URL(window.location);
+                url.searchParams.delete('message'); 
+                window.history.replaceState(null, '', url);
+            }
+        </script>
+
+        <form action="" method="post" enctype="multipart/form-data" class="login-form">
+            <input type="text" name="name" placeholder="Username" required/>
+            <input type="email" name="email" placeholder="Email address" required/>
+            <input type="number" name="phone" placeholder="Phone number" required/>
+            <input type="password" name="password" placeholder="Password" required/>
+
+            <label for="image">Gaming Profile Picture</label>
+            <label class="custom-file-upload">
+                <input type="file" name="image" required/>
+                Choose
+            </label>
+
+            <input type="submit" value="Add User">
+        </form>
+        <p class="login-link">
+            <a href="/admin/dashboard">Back to Dashboard</a>
+        </p>
+    </div>
+</body>
